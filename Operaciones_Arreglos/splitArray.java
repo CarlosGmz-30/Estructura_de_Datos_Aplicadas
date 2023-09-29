@@ -10,23 +10,21 @@ extenso de preferencia y el sistema debe de pedir una palabra a buscar en el tex
 public class splitArray {
     public static void main(String[] args) {
 
-        //Zona de variables
+        // Zona de variables
         String texto = "";
         String palabra = "";
         int contador = 0;
-        
-
-        //Zona de entrada de datos
-        System.out.println("\n = BIENVENIDO AL BUSCADOR DE PALABRAS =\n");
         Scanner sc = new Scanner(System.in);
+
+        // Zona de entrada de datos
+        System.out.println("\n = BIENVENIDO AL BUSCADOR DE PALABRAS =\n");
         System.out.println("Ingrese el texto del que desea  buscar una palabra: ");
         texto = sc.nextLine();
         System.out.println("Ingrese la palabra que desea buscar: ");
         palabra = sc.nextLine();
-        System.out.println("\n");
+        System.out.println("");
 
-
-        //Zona de operaciones
+        // Zona de operaciones
         String[] palabras = texto.split(" ");
         for (int i = 0; i < palabras.length; i++) {
             if (palabras[i].equals(palabra)) {
@@ -34,7 +32,8 @@ public class splitArray {
             }
         }
 
-        //Zona de salida de datos
-        System.out.println("La palabra " + palabra + " se repite " + contador + " veces.");
+        // Zona de salida de datos
+        System.out.println("La palabra [" + palabra + "] se repite " + contador + " veces.");
+        sc.close();
     }
 }
