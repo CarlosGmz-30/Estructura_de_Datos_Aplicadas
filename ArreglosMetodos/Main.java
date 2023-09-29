@@ -1,5 +1,3 @@
-package ArreglosMetodos;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -39,6 +37,7 @@ public class Main {
             arrDividido2[i] = arr1[i + pos];
         }
 
+        
      
         System.out.println("Primer arreglo");
         for (int i : arrDividido1) {
