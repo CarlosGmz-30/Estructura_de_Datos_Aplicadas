@@ -43,7 +43,7 @@ public class splitRandom {
 
         int[] arr1 = new int[posicion - 1];
         int[] arr2 = new int[numeros.length - posicion];
-        
+
         for (int i = 0; i < arr1.length; i++) {
             arr1[i] = numeros[i];
         }
