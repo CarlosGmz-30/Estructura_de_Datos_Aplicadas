@@ -66,8 +66,8 @@ public class sistemaInventario {
                     break;
             }
         } while (opcion != 5);
+        sc.close();
     }
-
 
     // Zona de métodos para ordenar y buscar productos
     public static void mostrarProductosMenorStock(String[] productos, int[] stock) {
