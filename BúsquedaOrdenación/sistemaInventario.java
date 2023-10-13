@@ -32,36 +32,44 @@ public class sistemaInventario {
 
         // Zona de menú principal
         do {
-            System.out.println("\n*** Sistema de Inventario ***");
+            System.out.println("\n*************** Sistema de Inventario ***************\n");
+
+            System.out.println("¿QUÉ DESEA HACER?\n");
             System.out.println("1. Mostrar los 5 productos con menor stock");
             System.out.println("2. Mostrar los 5 productos con mayor costo");
             System.out.println("3. Buscar productos por precio");
             System.out.println("4. Buscar productos por cantidad en stock");
             System.out.println("5. Salir");
-            System.out.print("Seleccione una opción: ");
+            System.out.print("\nSeleccione una opción: ");
             opcion = sc.nextInt();
 
             switch (opcion) {
                 case 1:
+                    System.out.println("\n*****************************************************\n");
                     mostrarProductosMenorStock(productos, stock);
                     break;
                 case 2:
+                    System.out.println("\n*****************************************************\n");
                     mostrarProductosMayorCosto(productos, precios);
                     break;
                 case 3:
+                    System.out.println("\n*****************************************************\n");
                     System.out.print("Ingrese el precio a buscar: ");
                     double precioBuscado = sc.nextDouble();
                     buscarPorPrecio(productos, precios, precioBuscado);
                     break;
                 case 4:
+                    System.out.println("\n*****************************************************\n");
                     System.out.print("Ingrese la cantidad en stock a buscar:");
                     int cantidadBuscada = sc.nextInt();
                     buscarPorStock(productos, stock, cantidadBuscada);
                     break;
                 case 5:
-                    System.out.println("Gracias por usar el sistema de inventario.");
+                    System.out.println("\n*****************************************************");
+                    System.out.println("SALIENDO...\n");
                     break;
                 default:
+                    System.out.println("\n*****************************************************\n");
                     System.out.println("Opción no válida. Por favor, elija una opción válida.");
                     break;
             }
@@ -69,7 +77,7 @@ public class sistemaInventario {
         sc.close();
     }
 
-    // Zona de métodos para ordenar y buscar productos
+    // Zona de método para ordenar los productos por stock
     public static void mostrarProductosMenorStock(String[] productos, int[] stock) {
         for (int i = 0; i < stock.length - 1; i++) {
             for (int j = 0; j < stock.length - 1 - i; j++) {
@@ -85,12 +93,13 @@ public class sistemaInventario {
             }
         }
 
-        System.out.println("\nLos 5 productos con menor stock son:");
+        System.out.println("Los 5 productos con menor stock son:\n");
         for (int i = 0; i < 5; i++) {
             System.out.println(productos[i] + " - Stock: " + stock[i]);
         }
     }
 
+    // Zona de método para ordenar los productos por precio
     public static void mostrarProductosMayorCosto(String[] productos, double[] precios) {
         for (int i = 0; i < precios.length - 1; i++) {
             for (int j = 0; j < precios.length - 1 - i; j++) {
@@ -106,15 +115,16 @@ public class sistemaInventario {
             }
         }
 
-        System.out.println("\nLos 5 productos con mayor costo son:");
+        System.out.println("Los 5 productos con mayor costo son:");
         for (int i = 0; i < 5; i++) {
             System.out.println(productos[i] + " - Precio: $" + precios[i]);
         }
     }
 
+    // Zona de método para buscar productos por precio
     public static void buscarPorPrecio(String[] productos, double[] precios, double precioBuscado) {
         boolean encontrado = false;
-        System.out.println("Productos encontrados con precio $" + precioBuscado + ":");
+        System.out.println("Productos encontrados con precio $" + precioBuscado + ":\n");
         for (int i = 0; i < productos.length; i++) {
             if (precios[i] == precioBuscado) {
                 System.out.println(productos[i] + " - Precio: $" + precios[i]);
@@ -122,13 +132,14 @@ public class sistemaInventario {
             }
         }
         if (!encontrado) {
-            System.out.println("No se encontraron productos con ese precio.");
+            System.out.println("NO SE ENCONTRARON PRODUCTOS CON ESE PRECIO.\n");
         }
     }
 
+    // Zona de método para buscar productos por cantidad en stock
     public static void buscarPorStock(String[] productos, int[] stock, int cantidadBuscada) {
         boolean encontrado = false;
-        System.out.println("Productos con " + cantidadBuscada + " unidades en stock:");
+        System.out.println("Productos con " + cantidadBuscada + " unidades en stock:\n");
         for (int i = 0; i < productos.length; i++) {
             if (stock[i] == cantidadBuscada) {
                 System.out.println(productos[i] + " - Stock: " + stock[i]);
@@ -136,7 +147,7 @@ public class sistemaInventario {
             }
         }
         if (!encontrado) {
-            System.out.println("No se encontraron productos con esa cantidad en stock.");
+            System.out.println("NO SE ENCONTRARON PRODUCTOS CON ESA CANTIDAD EN STOCK.\n");
         }
     }
 }
