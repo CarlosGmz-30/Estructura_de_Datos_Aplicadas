@@ -1,12 +1,27 @@
 package ExamenUnidad_2;
 
+/*
+Desarrolla un sistema donde se pueda hacer gestión de materias y alumnos. 
+- Gestionar materias
+   - Crear materias
+   - Eliminar materias
+   - modificar materias
+- Gestionar alumnos
+   - Asignar materias
+   - Asignar calificaciones de materias
+   - Mostrar de manera ordenada por mejores promedios
+   -  Mostrar de manera ordenada por calificación de X materia
+*/
+
 import java.util.Scanner;
 
 public class SistemaEscolar {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int opprin, contMaterias = 0;
+        int opprin, contMaterias = 0, contAlumnos = 0;
         String[] materias = new String[100];
+        String[] alumnos = new String[100];
+        int[] calificaciones = new int[10];
 
         do {
             System.out.println("\n**********Bienvenido al sistema escolar**********");
@@ -98,7 +113,75 @@ public class SistemaEscolar {
                     } while (opsec != 5);
                     break;
                 case 2:
-                    System.out.println("*****************Gestionar Alumnos (pendiente)***************");
+                    System.out.println("*****************Gestionar Alumnos*****************");
+                    int opsec2;
+                    do {
+                        System.out.println("\n¿QUÉ DESEA HACER?\n");
+                        System.out.println("1. Asignar materias");
+                        System.out.println("2. Asignar calificaciones de materias");
+                        System.out.println("3. Mostrar de manera ordenada por mejores promedios");
+                        System.out.println("4. Mostrar de manera ordenada por calificación de X materia");
+                        System.out.println("5. Regresar");
+                        System.out.println("\nSelecciona una opción: ");
+                        opsec2 = sc.nextInt();
+                        switch (opsec2) {
+                            case 1:
+                                System.out.println("Asignación de Materias: ");
+                                System.out.println("Ingresa el nombre del alumno: ");
+                                sc.nextLine();
+                                String nombreAlumno = sc.nextLine();
+                                alumnos[contAlumnos] = nombreAlumno;
+                                System.out.println("Materias registradas:");
+                                for (int i = 0; i < contMaterias; i++) {
+                                    System.out.println((i + 1) + ". " + materias[i]);
+                                }
+                                System.out.println("Ingresa el número de materias a asignar: ");
+                                int numMaterias = sc.nextInt();
+                                for (int i = 0; i < numMaterias; i++) {
+                                    System.out.println("Ingresa el número de la materia a asignar: ");
+                                    int numMateria = sc.nextInt();
+                                    if (numMateria >= 1 && numMateria <= contMaterias) {
+                                    } else {
+                                        System.out.println("Número de materia no válido.");
+                                    }
+                                }
+                                contAlumnos++;
+                                break;
+                            case 2:
+                                System.out.println("Asignación de Calificaciones:");
+                                for (int i = 0; i < calificaciones.length; i++) {
+                                    calificaciones[i] = (int) (Math.random() * 10) + 1;
+                                }
+                                System.out.println("\nCALIFICACIONES ASIGNADAS CORRECTAMENTE\n");
+                                break;
+                            case 3:
+                                System.out.println("\nMostrando mejores promedios: ");
+                                // Zona de ordenamiento de calificaciones
+                                for (int i = 0; i < calificaciones.length - 1; i++) {
+                                    for (int j = 0; j < calificaciones.length - 1; j++) {
+                                        if (calificaciones[j] < calificaciones[j + 1]) {
+                                            int aux = calificaciones[j];
+                                            calificaciones[j] = calificaciones[j + 1];
+                                            calificaciones[j + 1] = aux;
+                                        }
+                                    }
+                                }
+                                // Zona de impresión de calificaciones
+                                for (int i = 0; i < calificaciones.length; i++) {
+                                    System.out.println("Calificación " + (i + 1) + ": "+ calificaciones[i]);
+                                }
+                                break;
+                            case 4:
+                                System.out.println("Mostrando calificaciones de materia en específico: ");
+
+                                break;
+                            case 5:
+                                System.out.println("Regresando...");
+                                break;
+                            default:
+                                System.out.println("Opción no válida");
+                        }
+                    } while (opsec2 != 5);
                     break;
                 case 3:
                     System.out.println("**************************************************");
@@ -108,5 +191,6 @@ public class SistemaEscolar {
                     System.out.println("Opción no válida");
             }
         } while (opprin != 3);
+        sc.close();
     }
 }
