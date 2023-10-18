@@ -7,5 +7,8 @@ public class Main {
         listaNueva.insertarDato("Moyito");
         listaNueva.mostrarLista();
         listaNueva.tamanioLista();
+        listaNueva.consultaIndice(1);
+        listaNueva.modificarIndice(1, "Carlos");
+        listaNueva.eliminarIndice(1);
     }
 }
