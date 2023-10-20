@@ -8,7 +8,7 @@ public class ListaCircular<T> {
     }
 
     public void insertar(T dato) {
-        Nodo<T> nuevoNodo = new Nodo(dato);
+        Nodo<T> nuevoNodo = new Nodo<T>(dato);
         if (lc != null) {
             nuevoNodo.enlace = lc.enlace;
             lc.enlace = nuevoNodo;
@@ -17,7 +17,7 @@ public class ListaCircular<T> {
     }
 
     public void recorrer() {
-        Nodo p;
+        Nodo<T> p;
         if (lc != null) {
             p = lc.enlace;
             do {
@@ -30,7 +30,7 @@ public class ListaCircular<T> {
     }
 
     public void eliminar(T entrada) {
-        Nodo actual;
+        Nodo<T> actual;
         boolean encontrado = false;
         actual = lc;
         while ((actual.enlace != lc) && (!encontrado)) {
@@ -41,7 +41,7 @@ public class ListaCircular<T> {
         }
         encontrado = (actual.enlace.dato == entrada);
         if (encontrado) {
-            Nodo p;
+            Nodo<T> p;
             p = actual.enlace;
             if (lc == lc.enlace) {
                 lc = null;
