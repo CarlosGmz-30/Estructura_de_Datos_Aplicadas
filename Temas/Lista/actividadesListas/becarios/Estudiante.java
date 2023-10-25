@@ -1,4 +1,4 @@
-package Lista.actividadesListas.becarios;
+package becarios;
 
 public class Estudiante {
 

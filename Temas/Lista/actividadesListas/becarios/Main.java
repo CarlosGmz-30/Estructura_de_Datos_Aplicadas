@@ -1,4 +1,4 @@
-package Lista.actividadesListas.becarios;
+package becarios;
 
 import java.util.ArrayList;
 import java.util.List;
