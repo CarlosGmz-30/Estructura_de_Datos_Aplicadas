@@ -1,4 +1,4 @@
-package ListasActividad.gestiónTareas;
+package gestiónTareas;
 
 public class Nodo<T> {
     public T dato;
