@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import contactos.Contacto;
-
 public class Main {
     public static void main(String[] args) {
         // Zona de declaración de lista de tipo tarea
