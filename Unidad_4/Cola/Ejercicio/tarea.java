@@ -1,9 +1,9 @@
 public class tarea {
     private String tittle;
-    private Date creationTime;
+    private String creationTime;
     private String description;
 
-    public tarea(String tittle, Date creationTime, String description) {
+    public tarea(String tittle, String creationTime, String description) {
         this.tittle = tittle;
         this.creationTime = creationTime;
         this.description = description;
@@ -17,11 +17,11 @@ public class tarea {
         this.tittle = tittle;
     }
 
-    public Date getCreationTime() {
+    public String getCreationTime() {
         return creationTime;
     }
 
-    public void setCreationTime(Date creationTime) {
+    public void setCreationTime(String creationTime) {
         this.creationTime = creationTime;
     }
 

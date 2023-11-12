@@ -1,5 +1,3 @@
-package Cola;
-
 public class cola<T> {
     private static final int MAXTAM = 3;
     private int inicio, fin;
