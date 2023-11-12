@@ -29,9 +29,15 @@ public class cola<T> {
         if (!colaVacia()) {
             T aux = lista[inicio];
             lista[inicio++] = null;
+
+            if (inicio == MAXTAM) {
+                inicio = 0;
+                fin = -1;
+            }
+
             return aux;
         } else {
-            throw new Exception("Sin elementos en el arrelgo");
+            throw new Exception("¡SIN TAREAS REGISTRADAS!\n");
         }
     }
 
@@ -42,8 +48,18 @@ public class cola<T> {
     }
 
     public void mostrar() {
-        for (T t : lista) {
-            System.out.println(t);
+        if (!colaVacia()) {
+            for (T t : lista) {
+                if (t != null) {
+                    tarea tarea = (tarea) t;
+                    System.out.println("Título: " + tarea.getTittle());
+                    System.out.println("Descripción: " + tarea.getDescription());
+                    System.out.println("Fecha de Creación: " + tarea.getCreationTime());
+                    System.out.println();
+                }
+            }
+        } else {
+            System.out.println("¡SIN TAREAS REGISTRADAS!\n");
         }
     }
 
