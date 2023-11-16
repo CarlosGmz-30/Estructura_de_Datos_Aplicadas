@@ -14,7 +14,7 @@ public class cola<T> {
     }
 
     public boolean colaLlena() {
-        return fin == MAXTAM;
+        return fin == MAXTAM - 1;
     }
 
     public void insertar(T dato) throws Exception {
@@ -42,9 +42,17 @@ public class cola<T> {
     }
 
     public void mostrar() {
-        for (T t : lista) {
-            System.out.println(t);
+        if (!colaVacia()) {
+            for (T t : lista) {
+                if (t != null) {
+                    paquete paquete = (paquete) t;
+                    System.out.println("Título: " + paquete.getNombre());
+                    System.out.println("Destini: " + paquete.getDireccion());
+                    System.out.println();
+                }
+            }
         }
+
     }
 
     public T mirarUltimo() throws Exception {
@@ -53,5 +61,9 @@ public class cola<T> {
         } else {
             throw new Exception("Sin elementos en el arrelgo");
         }
+    }
+
+    public int obtenerTamanio() {
+        return fin - inicio + 1;
     }
 }
