@@ -11,6 +11,7 @@ public class main {
         Scanner sc = new Scanner(System.in);
         int opprin = 0;
 
+        // Zona de menú principal
         do {
             System.out.println("------------ LISTA DE TAREAS ------------\n");
             System.out.println("¿Qué desea hacer?\n");
@@ -27,7 +28,7 @@ public class main {
                     String instrucciones = sc.nextLine();
                     System.out.print("Fecha de entrega: ");
                     String fechaEntrega = sc.nextLine();
-                    // Creamos nueva tarea y la añadimos a nuestra cola
+                    // Creamos una nueva tarea y la añadimos a nuestra cola
                     tarea nuevaTarea = new tarea(titulo, instrucciones, fechaEntrega);
                     colaTareas.add(nuevaTarea);
                     System.out.println("\n¡TAREA AGREGADA CON ÉXITO!\n");
