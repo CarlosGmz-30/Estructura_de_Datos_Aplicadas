@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-import EjercicioManipulacionTareas.tarea;
 
 public class main {
     public static void main(String[] args) {
