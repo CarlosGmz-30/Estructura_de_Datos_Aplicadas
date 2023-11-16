@@ -42,17 +42,9 @@ public class cola<T> {
     }
 
     public void mostrar() {
-        if (!colaVacia()) {
-            for (T t : lista) {
-                if (t != null) {
-                    paquete paquete = (paquete) t;
-                    System.out.println("Título: " + paquete.getNombre());
-                    System.out.println("Destini: " + paquete.getDireccion());
-                    System.out.println();
-                }
-            }
+        for (T t : lista) {
+            System.out.println(t);
         }
-
     }
 
     public T mirarUltimo() throws Exception {
