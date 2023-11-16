@@ -70,4 +70,8 @@ public class cola<T> {
             throw new Exception("Sin elementos en el arrelgo");
         }
     }
+
+    public int obtenerTamanio() {
+        return fin - inicio + 1;
+    }
 }

@@ -1,4 +1,4 @@
-package Stack;
+// package Stack;
 
 import java.util.Stack;
 
@@ -9,7 +9,7 @@ public class main {
         // Validar si está vacía
         System.out.println("¿Está vacía? " + (pila.isEmpty() ? "Si" : "No"));
 
-        // Agregamos datps a nuestro Stack
+        // Agregamos datos a nuestro Stack
         pila.push("Charlie");
         pila.push("Keyla");
         pila.push("Daniela");
