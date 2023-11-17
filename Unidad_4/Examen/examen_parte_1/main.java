@@ -30,6 +30,7 @@ public class main {
                     case 2:
                         System.out.println("\n-------------------------------------");
                         System.out.println("SALIENDO...\n");
+                        sc.close();
                         break;
                     default:
                         break;
