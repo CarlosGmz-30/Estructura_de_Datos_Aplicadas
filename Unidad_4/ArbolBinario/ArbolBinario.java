@@ -42,23 +42,33 @@ public class ArbolBinario {
         }
     }
 
-
-//Metodo pra realizar un rrecorrido prorden 
-
-
-public void preOrden (){
-    preOrdenREc();
-    System.out.println();
-}
-
-
-
-// MEtodo auxiliar recusivo 
-
-public void preOrdenREc(){
-    if(raiz != null){
-        System.out.println(raiz.valor);
-        preOrden();
+    // Método para realizar un recorrido preorden del árbol
+    public void preorden() {
+        preordenRec(raiz);
+        System.out.println();
     }
-}
+
+    // Método auxiliar recursivo para realizar un recorrido preorden
+    private void preordenRec(Nodo raiz) {
+        if (raiz != null) {
+            System.out.print(raiz.valor + " ");
+            preordenRec(raiz.izquierdo);
+            preordenRec(raiz.derecho);
+        }
+    }
+
+    // Método para realizar un recorrido postorden del árbol
+    public void postorden() {
+        postordenRec(raiz);
+        System.out.println();
+    }
+
+    // Método auxiliar recursivo para realizar un recorrido postorden
+    private void postordenRec(Nodo raiz) {
+        if (raiz != null) {
+            postordenRec(raiz.izquierdo);
+            postordenRec(raiz.derecho);
+            System.out.print(raiz.valor + " ");
+        }
+    }
 }
