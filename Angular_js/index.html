@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body>
+    <div>
+        Mostrar el nombre
+        <label>Name:</label>
+        <input type="text" ng-model="yourName" placeholder="Enter a name here">
+        <hr>
+        <h1>Hello {{yourName}}!</h1>
+
+        Suma de un número
+        <hr>
+        <label>Número 1:</label>
+        <input type="number" ng-model="num1" placeholder="Enter a name here">
+        <label>Número 2:</label>
+        <input type="number" ng-model="num2" placeholder="Enter a name here">
+        <h1>Suma: {{num1 + num2}}</h1>
+        </hr>
+
+    </div>
+</body>
+
+</html>
