@@ -1,11 +1,17 @@
+package ArbolesJuego;
+
 public class Nodo {
-    
-    int valor;
-     
+    String valor;
     Nodo izquierdo, derecho;
 
-    public Nodo (int valor){
+    public Nodo(String valor) {
         this.valor = valor;
-        izquierdo =derecho= null;
+        izquierdo = derecho = null;
+    }
+
+    public Nodo(String pregunta, Nodo izquierdo, Nodo derecho) {
+        this.valor = pregunta;
+        this.izquierdo = izquierdo;
+        this.derecho = derecho;
     }
 }

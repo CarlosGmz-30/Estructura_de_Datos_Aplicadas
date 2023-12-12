@@ -1,39 +1,35 @@
+package ArbolesJuego;
+
 public class ArbolBinario {
     Nodo raiz;
 
     public ArbolBinario() {
         raiz = null;
-
     }
 
-    public void insertar(int valor) {
+    public void insertar(String valor) {
         raiz = insertarRec(raiz, valor);
     }
 
-    private Nodo insertarRec(Nodo raiz, int valor) {
-        // ? Si el árbol está vacío, crea un nuevo nodo
+    private Nodo insertarRec(Nodo raiz, String valor) {
         if (raiz == null) {
             raiz = new Nodo(valor);
             return raiz;
         }
 
-        // ? De lo contrario, recorre el árbol
-        if (valor < raiz.valor) {
+        if (valor.compareTo(raiz.valor) < 0) {
             raiz.izquierdo = insertarRec(raiz.izquierdo, valor);
-        } else if (valor > raiz.valor) {
+        } else if (valor.compareTo(raiz.valor) > 0) {
             raiz.derecho = insertarRec(raiz.derecho, valor);
         }
 
-        // * Devuelve el nodo raíz modificado
         return raiz;
     }
 
-    // Método para realizar un recorrido inorden del árbol
     public void inorden() {
         inordenRec(raiz);
     }
 
-    // Método auxiliar recursivo para realizar un recorrido inorden
     private void inordenRec(Nodo raiz) {
         if (raiz != null) {
             inordenRec(raiz.izquierdo);
@@ -42,13 +38,11 @@ public class ArbolBinario {
         }
     }
 
-    // Método para realizar un recorrido preorden del árbol
     public void preorden() {
         preordenRec(raiz);
         System.out.println();
     }
 
-    // Método auxiliar recursivo para realizar un recorrido preorden
     private void preordenRec(Nodo raiz) {
         if (raiz != null) {
             System.out.print(raiz.valor + " ");
@@ -57,13 +51,11 @@ public class ArbolBinario {
         }
     }
 
-    // Método para realizar un recorrido postorden del árbol
     public void postorden() {
         postordenRec(raiz);
         System.out.println();
     }
 
-    // Método auxiliar recursivo para realizar un recorrido postorden
     private void postordenRec(Nodo raiz) {
         if (raiz != null) {
             postordenRec(raiz.izquierdo);
