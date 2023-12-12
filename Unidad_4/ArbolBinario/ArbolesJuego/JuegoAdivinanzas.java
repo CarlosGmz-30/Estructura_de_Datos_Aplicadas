@@ -24,7 +24,7 @@ public class JuegoAdivinanzas {
     private static void jugar(Nodo nodo, Scanner scanner) {
         while (true) {
             if (nodo.izquierdo != null && nodo.derecho != null) {
-                System.out.println(nodo.valor + " (responde si o no)");
+                System.out.println(nodo.valor + " (Responde si/no)");
                 String respuesta = scanner.nextLine().toLowerCase();
 
                 if (respuesta.equals("si")) {
@@ -32,15 +32,15 @@ public class JuegoAdivinanzas {
                 } else if (respuesta.equals("no")) {
                     nodo = nodo.derecho;
                 } else {
-                    System.out.println("Respuesta no válida. Fin del juego.");
+                    System.out.println("¡RESPUESTA NO VÁLIDA!, GAME OVER\n");
                     break;
                 }
             } else {
-                System.out.println("¿Es " + nodo.valor + "? (responde sí o no)");
+                System.out.println("¿Es " + nodo.valor + "? (Responde si/no)");
                 String respuesta = scanner.nextLine().toLowerCase();
 
                 if (respuesta.equals("si")) {
-                    System.out.println("¡Adiviné!");
+                    System.out.println("¡ADIVINÉ, FIN DEL JUEGO!\n");
                 } else {
                     System.out.println("No he adivinado. Fin del juego.");
                 }
